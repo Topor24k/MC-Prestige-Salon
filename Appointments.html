@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MC Hair & Beauty Salon – Appointments</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="Appointments.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-letters">MC</div>
+      <div class="logo-sub">hair and beauty salon</div>
+    </div>
+    <div class="sidebar-inner">
+      <div class="menu-label">Main Menu</div>
+      <a href="#" class="nav-item">
+        <span class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span> Dashboard
+      </a>
+      <a href="FinancialReport.html" class="nav-item">
+        <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span> Financial Report
+      </a>
+      <a href="Appointments.html" class="nav-item active">
+        <span class="nav-icon"><i class="fa-solid fa-calendar-days"></i></span> Appointments
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon"><i class="fa-solid fa-scissors"></i></span> Services
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <div class="main">
+
+    <!-- Top header -->
+    <header class="top-header">
+      <span class="header-title">Appointments</span>
+      <div class="header-actions">
+        <div class="icon-btn"><i class="fa-regular fa-envelope"></i></div>
+        <div class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge"></span></div>
+        <div class="user-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="user-info">
+          <div class="user-name">Kayeen Campana</div>
+          <div class="user-email">k.campana@gmail.com</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Summary header -->
+      <div class="summary-header">
+        <div class="summary-title-block">
+          <div class="summary-title">Appointments Overview</div>
+          <div class="summary-sub">April 2026</div>
+        </div>
+        <div class="summary-actions">
+          <button class="btn-primary" type="button">
+            <span><i class="fa-solid fa-plus"></i></span> New Appointment
+          </button>
+          <button class="btn-secondary" type="button">
+            <span><i class="fa-solid fa-gear"></i></span> Manage
+          </button>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stat-cards">
+        <div class="stat-card dark">
+          <div class="stat-card-top">
+            <span class="stat-label">Total Appointments</span>
+            <span class="stat-arrow"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          </div>
+          <div class="stat-value">20</div>
+          <div class="stat-change">+12% increased from last month</div>
+        </div>
+        <div class="stat-card light">
+          <div class="stat-card-top">
+            <span class="stat-label">Today's Appointments</span>
+            <span class="stat-arrow"><i class="fa-solid fa-calendar-check"></i></span>
+          </div>
+          <div class="stat-value">1</div>
+          <div class="stat-change">Latest scheduling</div>
+        </div>
+        <div class="stat-card light">
+          <div class="stat-card-top">
+            <span class="stat-label">Completed</span>
+            <span class="stat-arrow"><i class="fa-solid fa-check-double"></i></span>
+          </div>
+          <div class="stat-value">15</div>
+          <div class="stat-change">This month</div>
+        </div>
+      </div>
+
+      <!-- Table Card -->
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-title">Recent Appointments</span>
+          <div class="table-controls">
+            <button class="btn-outline-sm" type="button"><i class="fa-solid fa-file-arrow-down"></i> Export</button>
+            <button class="btn-outline-sm" type="button"><i class="fa-solid fa-chevron-down"></i> This Month</button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>Customer Name</th>
+              <th>Phone</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Karen Campana</td>
+              <td>09123456789</td>
+              <td>Hair Treatment Reborn</td>
+              <td>04/06/26</td>
+              <td>4:00 PM</td>
+              <td><span class="status-pending">Pending</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Maria Santos</td>
+              <td>09987654321</td>
+              <td>Manicure</td>
+              <td>04/06/26</td>
+              <td>2:30 PM</td>
+              <td><span class="status-completed">Completed</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Angel Cruz</td>
+              <td>09112345678</td>
+              <td>Hair Spa</td>
+              <td>04/06/26</td>
+              <td>3:00 PM</td>
+              <td><span class="status-pending">Pending</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Rebecca Lopez</td>
+              <td>09234567890</td>
+              <td>Pedicure</td>
+              <td>04/07/26</td>
+              <td>10:00 AM</td>
+              <td><span class="status-pending">Pending</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Jessica Garcia</td>
+              <td>09345678901</td>
+              <td>Facial</td>
+              <td>04/07/26</td>
+              <td>1:00 PM</td>
+              <td><span class="status-completed">Completed</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Diana Reyes</td>
+              <td>09456789012</td>
+              <td>Hair Coloring</td>
+              <td>04/07/26</td>
+              <td>11:00 AM</td>
+              <td><span class="status-pending">Pending</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Sofia Fernandez</td>
+              <td>09567890123</td>
+              <td>Makeup</td>
+              <td>04/08/26</td>
+              <td>2:00 PM</td>
+              <td><span class="status-pending">Pending</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Anna Martinez</td>
+              <td>09678901234</td>
+              <td>Threading</td>
+              <td>04/08/26</td>
+              <td>3:30 PM</td>
+              <td><span class="status-completed">Completed</span></td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div><!-- /table-card -->
+
+    </div><!-- /content -->
+
+  </div><!-- /main -->
+
+</div><!-- /shell -->
+
+<script src="Appointments.js"></script>
+</body>
+</html>
