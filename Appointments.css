@@ -1,0 +1,11 @@
+@import url("FinancialReport.css");
+
+.status-pending {
+  color: #CBA052;
+  font-weight: 500;
+}
+
+.status-completed {
+  color: #14733C;
+  font-weight: 500;
+}
