@@ -60,14 +60,6 @@
           <div class="summary-title">Appointments Overview</div>
           <div class="summary-sub">April 2026</div>
         </div>
-        <div class="summary-actions">
-          <button class="btn-primary" type="button">
-            <span><i class="fa-solid fa-plus"></i></span> New Appointment
-          </button>
-          <button class="btn-secondary" type="button">
-            <span><i class="fa-solid fa-gear"></i></span> Manage
-          </button>
-        </div>
       </div>
 
       <!-- Stat cards -->
@@ -80,7 +72,7 @@
           <div class="stat-value">20</div>
           <div class="stat-change">+12% increased from last month</div>
         </div>
-        <div class="stat-card light">
+        <div class="stat-card light" id="todays-appointments-card" role="button" tabindex="0" aria-label="Open today's appointments">
           <div class="stat-card-top">
             <span class="stat-label">Today's Appointments</span>
             <span class="stat-arrow"><i class="fa-solid fa-calendar-check"></i></span>
@@ -88,7 +80,7 @@
           <div class="stat-value">1</div>
           <div class="stat-change">Latest scheduling</div>
         </div>
-        <div class="stat-card light">
+        <div class="stat-card light" id="completed-appointments-card" role="button" tabindex="0" aria-label="Open completed appointments">
           <div class="stat-card-top">
             <span class="stat-label">Completed</span>
             <span class="stat-arrow"><i class="fa-solid fa-check-double"></i></span>
@@ -103,6 +95,8 @@
         <div class="table-header">
           <span class="table-title">Recent Appointments</span>
           <div class="table-controls">
+            <button class="btn-primary" type="button"><i class="fa-solid fa-plus"></i> Add New Customer</button>
+            <button class="btn-outline-sm" type="button"><i class="fa-solid fa-filter"></i> Filters</button>
             <button class="btn-outline-sm" type="button"><i class="fa-solid fa-file-arrow-down"></i> Export</button>
             <button class="btn-outline-sm" type="button"><i class="fa-solid fa-chevron-down"></i> This Month</button>
           </div>
@@ -228,6 +222,92 @@
   </div><!-- /main -->
 
 </div><!-- /shell -->
+
+<div class="modal-backdrop" id="todays-appointments-modal" aria-hidden="true">
+  <div class="todays-modal" role="dialog" aria-modal="true" aria-labelledby="todays-modal-title">
+    <div class="todays-modal-header">
+      <div class="todays-modal-title-wrap">
+        <button class="todays-add-btn" type="button" aria-label="Add new appointment">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <h2 class="todays-modal-title" id="todays-modal-title">Today's Appointment</h2>
+      </div>
+      <div class="todays-total-wrap">
+        <div class="todays-total-count">5</div>
+        <div class="todays-total-label">Total</div>
+      </div>
+    </div>
+
+    <div class="todays-modal-body">
+      <table class="todays-table">
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Phone</th>
+            <th>Facebook</th>
+            <th>Service</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>#CUS001</td><td>Theo Jane</td><td>09123456789</td><td>https://ww...</td><td>Nails</td><td>4:00PM</td></tr>
+          <tr><td>#CUS002</td><td>Theo James</td><td>09123456789</td><td>https://ww...</td><td>Nails</td><td>4:00PM</td></tr>
+          <tr><td>#CUS003</td><td>Jungkook</td><td>09123456789</td><td>https://ww...</td><td>Nails</td><td>4:00PM</td></tr>
+          <tr><td>#CUS004</td><td>Rege Jean</td><td>09123456789</td><td>https://ww...</td><td>Nails</td><td>4:00PM</td></tr>
+          <tr><td>#CUS005</td><td>Jerlyn</td><td>09123456789</td><td>https://ww...</td><td>Nails</td><td>4:00PM</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="todays-modal-footer">
+      <button class="entry-action secondary" id="todays-modal-close" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="completed-appointments-modal" aria-hidden="true">
+  <div class="todays-modal" role="dialog" aria-modal="true" aria-labelledby="completed-modal-title">
+    <div class="todays-modal-header">
+      <div class="todays-modal-title-wrap">
+        <button class="todays-add-btn" type="button" aria-label="Add new appointment">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <h2 class="todays-modal-title" id="completed-modal-title">Completed Appointments</h2>
+      </div>
+      <div class="todays-total-wrap">
+        <div class="todays-total-count">5</div>
+        <div class="todays-total-label">Total</div>
+      </div>
+    </div>
+
+    <div class="todays-modal-body">
+      <table class="todays-table">
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Phone</th>
+            <th>Facebook</th>
+            <th>Service</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>#CUS011</td><td>Karen Campana</td><td>09123456789</td><td>https://ww...</td><td>Hair Rebond</td><td>10:00AM</td></tr>
+          <tr><td>#CUS012</td><td>Maria Santos</td><td>09987654321</td><td>https://ww...</td><td>Manicure</td><td>11:30AM</td></tr>
+          <tr><td>#CUS013</td><td>Jessica Garcia</td><td>09345678901</td><td>https://ww...</td><td>Facial</td><td>1:00PM</td></tr>
+          <tr><td>#CUS014</td><td>Anna Martinez</td><td>09678901234</td><td>https://ww...</td><td>Threading</td><td>2:30PM</td></tr>
+          <tr><td>#CUS015</td><td>Diana Reyes</td><td>09456789012</td><td>https://ww...</td><td>Hair Color</td><td>4:00PM</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="todays-modal-footer">
+      <button class="entry-action secondary" id="completed-modal-close" type="button">Close</button>
+    </div>
+  </div>
+</div>
 
 <script src="Appointments.js"></script>
 </body>
