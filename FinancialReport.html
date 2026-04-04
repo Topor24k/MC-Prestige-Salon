@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MC Hair & Beauty Salon – Financial Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="FinancialReport.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-letters">MC</div>
+      <div class="logo-sub">hair and beauty salon</div>
+    </div>
+    <div class="sidebar-inner">
+      <div class="menu-label">Main Menu</div>
+      <a href="#" class="nav-item">
+        <span class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span> Dashboard
+      </a>
+      <a href="FinancialReport.html" class="nav-item active">
+        <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span> Financial Report
+      </a>
+      <a href="Appointments.html" class="nav-item">
+        <span class="nav-icon"><i class="fa-solid fa-calendar-days"></i></span> Appointments
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon"><i class="fa-solid fa-scissors"></i></span> Services
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <div class="main">
+
+    <!-- Top header -->
+    <header class="top-header">
+      <span class="header-title">Financial Report</span>
+      <div class="header-actions">
+        <div class="icon-btn"><i class="fa-regular fa-envelope"></i></div>
+        <div class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge"></span></div>
+        <div class="user-avatar"><i class="fa-regular fa-user"></i></div>
+        <div class="user-info">
+          <div class="user-name">Kayeen Campana</div>
+          <div class="user-email">k.campana@gmail.com</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Summary header -->
+      <div class="summary-header">
+        <div class="summary-title-block">
+          <div class="summary-title">Monthly Summary</div>
+          <div class="summary-sub">January 2026</div>
+        </div>
+        <div class="summary-actions">
+          <button class="btn-primary" id="add-entry-btn" type="button">
+            <span><i class="fa-regular fa-file-lines"></i></span> Add New Entry
+          </button>
+          <button class="btn-secondary">
+            <span><i class="fa-solid fa-gear"></i></span> Import Data
+          </button>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stat-cards">
+        <div class="stat-card dark">
+          <div class="stat-card-top">
+            <span class="stat-label">Gross Sales</span>
+            <span class="stat-arrow"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          </div>
+          <div class="stat-value">₱14,128.00</div>
+          <div class="stat-change">+12% increased from last month</div>
+        </div>
+        <div class="stat-card light">
+          <div class="stat-card-top">
+            <span class="stat-label">Expenses</span>
+            <span class="stat-arrow"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          </div>
+          <div class="stat-value">₱9,550.21</div>
+          <div class="stat-change">+12% increased from last month</div>
+        </div>
+        <div class="stat-card light">
+          <div class="stat-card-top">
+            <span class="stat-label">Net Sales</span>
+            <span class="stat-arrow"><i class="fa-solid fa-arrow-trend-up"></i></span>
+          </div>
+          <div class="stat-value">₱4,557.79</div>
+          <div class="stat-change">+12% increased from last month</div>
+        </div>
+      </div>
+
+      <!-- Transactions -->
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-title">Recent Transaction</span>
+          <div class="table-controls">
+            <button class="btn-outline-sm"><i class="fa-solid fa-file-arrow-down"></i> Export</button>
+            <button class="btn-outline-sm"><i class="fa-solid fa-chevron-down"></i> This Month</button>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Credit</th>
+              <th>Gross Sales</th>
+              <th>Debit</th>
+              <th>Total Expense</th>
+              <th>Net Sales</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row template × 5 -->
+            <tr>
+              <td>01-09-26</td>
+              <td class="credit-cell">
+                <div class="credit-row"><span class="credit-name">Hair</span><span class="credit-dash">–</span><span>₱200</span></div>
+                <div class="credit-row"><span class="credit-name">Nails</span><span class="credit-dash">–</span><span>₱390</span></div>
+                <div class="credit-row"><span class="credit-name">KOS</span><span class="credit-dash">–</span><span>₱1,300</span></div>
+              </td>
+              <td>₱1,890</td>
+              <td></td>
+              <td>₱0.00</td>
+              <td>₱1,890.00</td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>01-09-26</td>
+              <td class="credit-cell">
+                <div class="credit-row"><span class="credit-name">Hair</span><span class="credit-dash">–</span><span>₱200</span></div>
+                <div class="credit-row"><span class="credit-name">Nails</span><span class="credit-dash">–</span><span>₱390</span></div>
+                <div class="credit-row"><span class="credit-name">KOS</span><span class="credit-dash">–</span><span>₱1,300</span></div>
+              </td>
+              <td>₱1,890</td>
+              <td></td>
+              <td>₱0.00</td>
+              <td>₱1,890.00</td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>01-09-26</td>
+              <td class="credit-cell">
+                <div class="credit-row"><span class="credit-name">Hair</span><span class="credit-dash">–</span><span>₱200</span></div>
+                <div class="credit-row"><span class="credit-name">Nails</span><span class="credit-dash">–</span><span>₱390</span></div>
+                <div class="credit-row"><span class="credit-name">KOS</span><span class="credit-dash">–</span><span>₱1,300</span></div>
+              </td>
+              <td>₱1,890</td>
+              <td></td>
+              <td>₱0.00</td>
+              <td>₱1,890.00</td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>01-09-26</td>
+              <td class="credit-cell">
+                <div class="credit-row"><span class="credit-name">Hair</span><span class="credit-dash">–</span><span>₱200</span></div>
+                <div class="credit-row"><span class="credit-name">Nails</span><span class="credit-dash">–</span><span>₱390</span></div>
+                <div class="credit-row"><span class="credit-name">KOS</span><span class="credit-dash">–</span><span>₱1,300</span></div>
+              </td>
+              <td>₱1,890</td>
+              <td></td>
+              <td>₱0.00</td>
+              <td>₱1,890.00</td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>01-09-26</td>
+              <td class="credit-cell">
+                <div class="credit-row"><span class="credit-name">Hair</span><span class="credit-dash">–</span><span>₱200</span></div>
+                <div class="credit-row"><span class="credit-name">Nails</span><span class="credit-dash">–</span><span>₱390</span></div>
+                <div class="credit-row"><span class="credit-name">KOS</span><span class="credit-dash">–</span><span>₱1,300</span></div>
+              </td>
+              <td>₱1,890</td>
+              <td></td>
+              <td>₱0.00</td>
+              <td>₱1,890.00</td>
+              <td class="actions-cell">
+                <button class="row-action-btn edit" type="button"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <button class="row-action-btn delete" type="button"><i class="fa-regular fa-trash-can"></i> Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /table-card -->
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /shell -->
+
+<div class="modal-backdrop" id="entry-modal" aria-hidden="true">
+  <div class="entry-modal" role="dialog" aria-modal="true" aria-labelledby="entry-modal-title">
+    <div class="entry-modal-header">
+      <div class="entry-modal-title-wrap">
+        <div class="entry-modal-icon"><i class="fa-regular fa-square-plus"></i></div>
+        <div>
+          <h2 class="entry-modal-title" id="entry-modal-title">Add New Entry</h2>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="close-entry-modal" type="button" aria-label="Close dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="entry-modal-divider"></div>
+
+    <div class="entry-modal-tabs">
+      <div class="entry-modal-tabs-track">
+        <button class="entry-tab active" id="entry-tab-credit" type="button" data-mode="credit">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Credit</span>
+        </button>
+        <button class="entry-tab" id="entry-tab-debit" type="button" data-mode="debit">
+          <i class="fa-solid fa-wallet"></i>
+          <span>Debit</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry-modal-body">
+      <label class="entry-label" for="entry-date">Date:</label>
+      <input id="entry-date" class="entry-input entry-date-input" type="date" />
+
+      <div class="entry-service-panel">
+        <div class="entry-service-panel-head" id="entry-panel-head">
+          <span>Add Expense</span>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+
+        <div class="entry-service-grid">
+          <div class="field-group">
+            <label for="entry-service" id="entry-service-label">Expense</label>
+            <div class="field-shell select-shell">
+              <select id="entry-service" class="entry-input">
+                <option>Hair</option>
+                <option>Nails</option>
+                <option>KOS</option>
+                <option selected>Cleaning Materials</option>
+                <option>Utilities</option>
+                <option>Supplies</option>
+                <option>Rent</option>
+                <option>Other</option>
+              </select>
+              <i class="fa-solid fa-chevron-down field-chevron"></i>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="entry-amount" id="entry-amount-label">Amount</label>
+            <input id="entry-amount" class="entry-input" type="text" placeholder="Expense Amount" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry-modal-footer">
+      <button class="entry-action secondary" id="cancel-entry-btn" type="button">Cancel</button>
+      <button class="entry-action primary" id="save-entry-btn" type="button">Save Entry</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="confirmation-modal" aria-hidden="true">
+  <div class="confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
+    <div class="confirmation-top-icon">
+      <i class="fa-solid fa-receipt"></i>
+    </div>
+    <h2 class="confirmation-title" id="confirmation-title">Entry Confirmation</h2>
+    <p class="confirmation-date" id="confirmation-date-text">January 6, 2026</p>
+
+    <div class="confirmation-list-card">
+      <div class="confirmation-row confirmation-head">
+        <span>Service</span>
+        <span>Transaction</span>
+        <span>Amount</span>
+      </div>
+      <div class="confirmation-list" id="confirmation-list"></div>
+    </div>
+
+    <div class="confirmation-summary-card">
+      <div class="confirmation-row">
+        <span>Total Expense:</span>
+        <span id="summary-total-expense">₱0.00</span>
+      </div>
+      <div class="confirmation-row">
+        <span>Gross Sale:</span>
+        <span id="summary-gross-sale">₱0.00</span>
+      </div>
+      <div class="confirmation-row">
+        <span>Net Sales:</span>
+        <span id="summary-net-sales">₱0.00</span>
+      </div>
+    </div>
+
+    <div class="confirmation-footer">
+      <button class="entry-action secondary confirmation-edit" id="confirmation-edit-btn" type="button">Edit</button>
+      <button class="entry-action primary confirmation-confirm" id="confirmation-confirm-btn" type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="FinancialReport.js"></script>
+</body>
+</html>
