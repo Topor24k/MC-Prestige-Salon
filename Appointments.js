@@ -15,95 +15,61 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.toggle('modal-open', isAnyModalOpen);
   };
 
-  const openTodaysModal = () => {
-    if (!todaysModal) {
+  const openModal = (modal) => {
+    if (!modal) {
       return;
     }
-    todaysModal.classList.add('is-open');
-    todaysModal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
     syncBodyModalState();
   };
 
-  const closeTodaysModal = () => {
-    if (!todaysModal) {
+  const closeModal = (modal) => {
+    if (!modal) {
       return;
     }
-    todaysModal.classList.remove('is-open');
-    todaysModal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
     syncBodyModalState();
   };
 
-  const openCompletedModal = () => {
-    if (!completedModal) {
-      return;
+  const bindModalTriggers = (card, modal, closeButton) => {
+    if (card) {
+      card.addEventListener('click', () => openModal(modal));
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openModal(modal);
+        }
+      });
     }
-    completedModal.classList.add('is-open');
-    completedModal.setAttribute('aria-hidden', 'false');
-    syncBodyModalState();
+
+    if (closeButton) {
+      closeButton.addEventListener('click', () => closeModal(modal));
+    }
+
+    if (modal) {
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          closeModal(modal);
+        }
+      });
+    }
   };
 
-  const closeCompletedModal = () => {
-    if (!completedModal) {
-      return;
-    }
-    completedModal.classList.remove('is-open');
-    completedModal.setAttribute('aria-hidden', 'true');
-    syncBodyModalState();
-  };
-
-  if (todaysCard) {
-    todaysCard.addEventListener('click', openTodaysModal);
-    todaysCard.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openTodaysModal();
-      }
-    });
-  }
-
-  if (todaysModalClose) {
-    todaysModalClose.addEventListener('click', closeTodaysModal);
-  }
-
-  if (completedCard) {
-    completedCard.addEventListener('click', openCompletedModal);
-    completedCard.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        openCompletedModal();
-      }
-    });
-  }
-
-  if (completedModalClose) {
-    completedModalClose.addEventListener('click', closeCompletedModal);
-  }
-
-  if (todaysModal) {
-    todaysModal.addEventListener('click', (event) => {
-      if (event.target === todaysModal) {
-        closeTodaysModal();
-      }
-    });
-  }
-
-  if (completedModal) {
-    completedModal.addEventListener('click', (event) => {
-      if (event.target === completedModal) {
-        closeCompletedModal();
-      }
-    });
-  }
+  bindModalTriggers(todaysCard, todaysModal, todaysModalClose);
+  bindModalTriggers(completedCard, completedModal, completedModalClose);
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && todaysModal?.classList.contains('is-open')) {
-      closeTodaysModal();
+    if (event.key !== 'Escape') {
       return;
     }
 
-    if (event.key === 'Escape' && completedModal?.classList.contains('is-open')) {
-      closeCompletedModal();
-    }
+    [todaysModal, completedModal].forEach((modal) => {
+      if (modal?.classList.contains('is-open')) {
+        closeModal(modal);
+      }
+    });
   });
 
   if (!tableBody) {
