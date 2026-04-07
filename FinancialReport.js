@@ -49,6 +49,15 @@ const modalModes = {
   }
 };
 
+function setModalVisibility(modal, isOpen) {
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.toggle('is-open', isOpen);
+  modal.setAttribute('aria-hidden', String(!isOpen));
+}
+
 function syncBodyLock() {
   const anyModalOpen = entryModal?.classList.contains('is-open') || confirmationModal?.classList.contains('is-open');
   document.body.classList.toggle('modal-open', Boolean(anyModalOpen));
@@ -188,7 +197,10 @@ function updateModalMode(mode) {
   }
 
   if (entryPanelHead) {
-    entryPanelHead.querySelector('span').textContent = config.panelHead;
+    const panelHeadLabel = entryPanelHead.querySelector('span');
+    if (panelHeadLabel) {
+      panelHeadLabel.textContent = config.panelHead;
+    }
   }
 
   if (entryServiceLabel) {
@@ -221,27 +233,23 @@ function updateModalMode(mode) {
 }
 
 function openEntryModal() {
-  entryModal.classList.add('is-open');
-  entryModal.setAttribute('aria-hidden', 'false');
+  setModalVisibility(entryModal, true);
   updateModalMode('credit');
   syncBodyLock();
 }
 
 function closeEntryModal() {
-  entryModal.classList.remove('is-open');
-  entryModal.setAttribute('aria-hidden', 'true');
+  setModalVisibility(entryModal, false);
   syncBodyLock();
 }
 
 function openConfirmationModal() {
-  confirmationModal?.classList.add('is-open');
-  confirmationModal?.setAttribute('aria-hidden', 'false');
+  setModalVisibility(confirmationModal, true);
   syncBodyLock();
 }
 
 function closeConfirmationModal() {
-  confirmationModal?.classList.remove('is-open');
-  confirmationModal?.setAttribute('aria-hidden', 'true');
+  setModalVisibility(confirmationModal, false);
   syncBodyLock();
 }
 
@@ -359,8 +367,7 @@ if (saveEntryButton) {
 if (confirmationEditButton) {
   confirmationEditButton.addEventListener('click', () => {
     closeConfirmationModal();
-    entryModal.classList.add('is-open');
-    entryModal.setAttribute('aria-hidden', 'false');
+    setModalVisibility(entryModal, true);
     updateModalMode('debit');
     syncBodyLock();
   });
