@@ -1,0 +1,130 @@
+/*
+ * Design system entry point — "The Calm Path".
+ *
+ * Every colour, font, radius, shadow, spacing step and motion timing is a token in @theme.
+ * Tailwind turns the tokens into utilities (bg-mist, text-forest, rounded-lg, shadow-soft,
+ * ease-calm …) and into CSS variables (var(--color-mist) …) that the stylesheets imported
+ * below are written with — one source, so the style stays the same on every page.
+ */
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@import './base.css' layer(base);
+@import './layout.css' layer(components);
+@import './components.css' layer(components);
+@import './pages.css' layer(components);
+
+@theme static {
+  /* ── Colour ── */
+  --color-*: initial;
+
+  /* Base: misty off-white and pale sky, so the whole interface feels open and light */
+  --color-mist: #f6f8f5; /* the page */
+  --color-sky: #eef3f1; /* sunken areas: fields, tracks, quiet hovers */
+  --color-surface: #fdfefc; /* cards, dialogs, menus */
+
+  /* Primary: leaf and forest green — navigation, active states, key information */
+  --color-leaf: #5e8c5a;
+  --color-forest: #2f4f3a;
+  --color-forest-deep: #243f2d; /* pressed / hover on forest */
+  --color-leaf-tint: #e2ede0; /* gentle tint behind active items and secondary buttons */
+  --color-leaf-wash: #eff5ed; /* the faintest green: row hovers, tinted cards */
+
+  /* Secondary: hazy blue-gray — secondary surfaces and inactive elements, like distant air */
+  --color-haze: #9fb4be;
+  --color-slate: #6f8a96;
+  --color-slate-deep: #4a626e; /* text on haze tint */
+  --color-haze-tint: #e4ecef;
+
+  /* Accent: soft sunlit yellow, used sparingly as the one guiding mark in a view */
+  --color-sun: #e8c547;
+
+  /* Text: deep green-charcoal, never pure black */
+  --color-ink: #1f2a24;
+  --color-ink-soft: #46544b;
+  --color-ink-mute: #647268; /* 4.7:1 on mist */
+
+  --color-line: rgb(31 42 36 / 0.08);
+  --color-line-strong: rgb(31 42 36 / 0.16);
+
+  /* Status: muted and earthy — sage, warm sand, soft terracotta. Always paired with a label. */
+  --color-sage: #3f6b45;
+  --color-sage-tint: #e2eddf;
+  --color-sand: #7a5c1c;
+  --color-sand-tint: #f3ead3;
+  --color-clay: #a04e37;
+  --color-clay-tint: #f5e3da;
+
+  /* Chart series */
+  --color-series-hair: #2f4f3a;
+  --color-series-nails: #6f8a96;
+
+  /* ── Type ── */
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; /* titles and large numerals */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --text-label: 0.6875rem; /* small uppercase labels above figures */
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.14em;
+  --text-label--font-weight: 600;
+
+  /* ── Space: an 8px system (p-1 = 8px, p-2 = 16px, p-3 = 24px …) ── */
+  --spacing: 0.5rem;
+
+  /* ── Shape: rounded, organic corners ── */
+  --radius-*: initial;
+  --radius-sm: 12px; /* fields, small tiles */
+  --radius-md: 16px; /* menus, toasts, inner panels */
+  --radius-lg: 20px; /* cards */
+  --radius-xl: 28px; /* dialogs, sheets */
+  --radius-pill: 999px; /* buttons, chips, badges */
+
+  /* ── Depth: very soft, diffused, slightly green ── */
+  --shadow-*: initial;
+  --shadow-soft: 0 1px 2px rgb(31 42 36 / 0.04), 0 10px 28px -14px rgb(47 79 58 / 0.14);
+  --shadow-lift: 0 2px 6px rgb(31 42 36 / 0.05), 0 22px 48px -20px rgb(47 79 58 / 0.24);
+  --shadow-float: 0 4px 12px rgb(31 42 36 / 0.06), 0 32px 80px -28px rgb(31 42 36 / 0.34);
+  --shadow-ring: 0 0 0 4px rgb(94 140 90 / 0.22); /* the gentle green focus ring */
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+
+  /* ── Motion: slow, smooth, breathing ── */
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-quick: 300ms; /* hovers, presses */
+  --duration-calm: 450ms; /* panels, menus, state changes */
+  --duration-slow: 600ms; /* page entrances, charts */
+}
+
+/* App-shell measurements. */
+:root {
+  --sidebar-w: 248px;
+  --sidebar-pad: 16px;
+  --topbar-h: 72px;
+  --tabbar-h: 64px;
+  --appbar-h: 58px;
+  --gutter: clamp(16px, 2.6vw, 40px);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Titles and large numerals: a soft serif with relaxed, lining figures. */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-variation-settings: 'SOFT' 60;
+  font-variant-numeric: lining-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Small uppercase labels with wide letter-spacing. */
+@utility label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}

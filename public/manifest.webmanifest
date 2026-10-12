@@ -1,0 +1,14 @@
+{
+  "name": "M&C Prestige Salon",
+  "short_name": "M&C Prestige",
+  "description": "Salon management for M&C Prestige Hair and Nail Salon.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f8f5",
+  "theme_color": "#f6f8f5",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
